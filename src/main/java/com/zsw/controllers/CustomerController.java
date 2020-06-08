@@ -24,7 +24,7 @@ import java.util.Map;
  * Created by zhangshaowei on 2020/4/2.
  */
 @RestController
-@RequestMapping(CrmStaticURLUtil.customerControler)
+@RequestMapping(CrmStaticURLUtil.customerController)
 public class CustomerController extends BaseController {
 
     private static final Logger LOG = LoggerFactory.getLogger(CustomerController.class);
@@ -35,10 +35,10 @@ public class CustomerController extends BaseController {
     @Autowired
     RestTemplate restTemplate;
 
-    @RequestMapping(value= CrmStaticURLUtil.customerControler_newCustomer,
+    @RequestMapping(value= CrmStaticURLUtil.customerController_newCustomer,
             method= RequestMethod.POST)
-    //    @Permission(code = "dectionary.customerControler.newCustomer",name = "新增客户",description ="新增客户"
-//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.customerControler + CrmStaticURLUtil.customerControler_newCustomer)
+    //    @Permission(code = "dectionary.customerController.newCustomer",name = "新增客户",description ="新增客户"
+//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.customerController + CrmStaticURLUtil.customerController_newCustomer)
     public String newCustomer(CustomerEntity customerEntity, @RequestHeader("userId") Integer currentUserId) throws Exception {
         try {
             ResponseJson responseJson = new ResponseJson();
@@ -63,10 +63,10 @@ public class CustomerController extends BaseController {
     }
 
 
-    @RequestMapping(value=CrmStaticURLUtil.customerControler_updateCustomer,
+    @RequestMapping(value=CrmStaticURLUtil.customerController_updateCustomer,
             method= RequestMethod.PUT)
-    //    @Permission(code = "dectionary.customerControler.updateCustomer",name = "更新客户",description ="更新客户"
-//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.customerControler + CrmStaticURLUtil.customerControler_updateCustomer)
+    //    @Permission(code = "dectionary.customerController.updateCustomer",name = "更新客户",description ="更新客户"
+//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.customerController + CrmStaticURLUtil.customerController_updateCustomer)
     public String updateCustomer(CustomerEntity customerEntity,@RequestHeader("userId") Integer currentUserId) throws Exception {
         try {
             ResponseJson responseJson = new ResponseJson();
@@ -93,10 +93,10 @@ public class CustomerController extends BaseController {
 
 
 
-    @RequestMapping(value=CrmStaticURLUtil.customerControler_getCustomer+"/{customerId}",
+    @RequestMapping(value=CrmStaticURLUtil.customerController_getCustomer+"/{customerId}",
             method= RequestMethod.GET)
-    //    @Permission(code = "dectionary.customerControler.getCustomer",name = "获取单个客户",description ="获取单个客户"
-//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.customerControler + CrmStaticURLUtil.customerControler_getCustomer)
+    //    @Permission(code = "dectionary.customerController.getCustomer",name = "获取单个客户",description ="获取单个客户"
+//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.customerController + CrmStaticURLUtil.customerController_getCustomer)
     public String getCustomer(@PathVariable Integer customerId) throws Exception {
         try {
 
@@ -121,10 +121,10 @@ public class CustomerController extends BaseController {
         }
     }
 
-    @RequestMapping(value=CrmStaticURLUtil.customerControler_customerPage,
+    @RequestMapping(value=CrmStaticURLUtil.customerController_customerPage,
             method= RequestMethod.GET)
-    //    @Permission(code = "dectionary.customerControler.customerPage",name = "搜索客户",description ="搜索客户"
-//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.customerControler + CrmStaticURLUtil.customerControler_customerPage)
+    //    @Permission(code = "dectionary.customerController.customerPage",name = "搜索客户",description ="搜索客户"
+//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.customerController + CrmStaticURLUtil.customerController_customerPage)
     public String customerPage(NativeWebRequest request) throws Exception {
         try {
             ResponseJson responseJson = new ResponseJson();
@@ -177,10 +177,10 @@ public class CustomerController extends BaseController {
         }
     }
 
-    @RequestMapping(value=CrmStaticURLUtil.customerControler_batchBan,
+    @RequestMapping(value=CrmStaticURLUtil.customerController_batchBan,
             method= RequestMethod.PUT)
-    //@Permission(code = "dectionary.customerControler.batchBan",name = "批量禁用/恢复客户",description ="批量禁用/恢复客户"
-    //    ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.customerControler + UserStaticURLUtil.customerControler_batchBan)
+    //@Permission(code = "dectionary.customerController.batchBan",name = "批量禁用/恢复客户",description ="批量禁用/恢复客户"
+    //    ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.customerController + UserStaticURLUtil.customerController_batchBan)
     public String batchBan( @RequestParam Map<String, String> params , @RequestHeader("userId") Integer currentUserId) throws Exception {
         try {
             ResponseJson responseJson = new ResponseJson();

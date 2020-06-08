@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by zhangshaowei on 2020/4/2.
  */
 @RestController
-@RequestMapping(DictionaryStaticURLUtil.testControler)
+@RequestMapping(DictionaryStaticURLUtil.testController)
 public class TestController extends BaseController {
 
     private static final Logger LOG = LoggerFactory.getLogger(TestController.class);

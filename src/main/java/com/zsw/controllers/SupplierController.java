@@ -25,7 +25,7 @@ import java.util.Map;
  * Created by zhangshaowei on 2020/5/31.
  */
 @RestController
-@RequestMapping(CrmStaticURLUtil.supplierControler)
+@RequestMapping(CrmStaticURLUtil.supplierController)
 public class SupplierController  extends BaseController {
 
     private static final Logger LOG = LoggerFactory.getLogger(SupplierController.class);
@@ -36,10 +36,10 @@ public class SupplierController  extends BaseController {
     @Autowired
     RestTemplate restTemplate;
 
-    @RequestMapping(value= CrmStaticURLUtil.supplierControler_newSupplier,
+    @RequestMapping(value= CrmStaticURLUtil.supplierController_newSupplier,
             method= RequestMethod.POST)
-    //    @Permission(code = "dectionary.supplierControler.newSupplier",name = "新增客户",description ="新增客户"
-//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.supplierControler + CrmStaticURLUtil.supplierControler_newSupplier)
+    //    @Permission(code = "dectionary.supplierController.newSupplier",name = "新增客户",description ="新增客户"
+//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.supplierController + CrmStaticURLUtil.supplierController_newSupplier)
     public String newSupplier(SupplierEntity supplierEntity, @RequestHeader("userId") Integer currentUserId) throws Exception {
         try {
             ResponseJson responseJson = new ResponseJson();
@@ -64,10 +64,10 @@ public class SupplierController  extends BaseController {
     }
 
 
-    @RequestMapping(value=CrmStaticURLUtil.supplierControler_updateSupplier,
+    @RequestMapping(value=CrmStaticURLUtil.supplierController_updateSupplier,
             method= RequestMethod.PUT)
-    //    @Permission(code = "dectionary.supplierControler.updateSupplier",name = "更新客户",description ="更新客户"
-//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.supplierControler + CrmStaticURLUtil.supplierControler_updateSupplier)
+    //    @Permission(code = "dectionary.supplierController.updateSupplier",name = "更新客户",description ="更新客户"
+//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.supplierController + CrmStaticURLUtil.supplierController_updateSupplier)
     public String updateSupplier(SupplierEntity supplierEntity,@RequestHeader("userId") Integer currentUserId) throws Exception {
         try {
             ResponseJson responseJson = new ResponseJson();
@@ -94,10 +94,10 @@ public class SupplierController  extends BaseController {
 
 
 
-    @RequestMapping(value=CrmStaticURLUtil.supplierControler_getSupplier+"/{supplierId}",
+    @RequestMapping(value=CrmStaticURLUtil.supplierController_getSupplier+"/{supplierId}",
             method= RequestMethod.GET)
-    //    @Permission(code = "dectionary.supplierControler.getSupplier",name = "获取单个客户",description ="获取单个客户"
-//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.supplierControler + CrmStaticURLUtil.supplierControler_getSupplier)
+    //    @Permission(code = "dectionary.supplierController.getSupplier",name = "获取单个客户",description ="获取单个客户"
+//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.supplierController + CrmStaticURLUtil.supplierController_getSupplier)
     public String getSupplier(@PathVariable Integer supplierId) throws Exception {
         try {
 
@@ -122,10 +122,10 @@ public class SupplierController  extends BaseController {
         }
     }
 
-    @RequestMapping(value=CrmStaticURLUtil.supplierControler_supplierPage,
+    @RequestMapping(value=CrmStaticURLUtil.supplierController_supplierPage,
             method= RequestMethod.GET)
-    //    @Permission(code = "dectionary.supplierControler.supplierPage",name = "搜索客户",description ="搜索客户"
-//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.supplierControler + CrmStaticURLUtil.supplierControler_supplierPage)
+    //    @Permission(code = "dectionary.supplierController.supplierPage",name = "搜索客户",description ="搜索客户"
+//            ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.supplierController + CrmStaticURLUtil.supplierController_supplierPage)
     public String supplierPage(NativeWebRequest request) throws Exception {
         try {
             ResponseJson responseJson = new ResponseJson();
@@ -178,10 +178,10 @@ public class SupplierController  extends BaseController {
         }
     }
 
-    @RequestMapping(value=CrmStaticURLUtil.supplierControler_batchBan,
+    @RequestMapping(value=CrmStaticURLUtil.supplierController_batchBan,
             method= RequestMethod.PUT)
-    //@Permission(code = "dectionary.supplierControler.batchBan",name = "批量禁用/恢复客户",description ="批量禁用/恢复客户"
-    //    ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.supplierControler + UserStaticURLUtil.supplierControler_batchBan)
+    //@Permission(code = "dectionary.supplierController.batchBan",name = "批量禁用/恢复客户",description ="批量禁用/恢复客户"
+    //    ,url=CommonStaticWord.dictionaryServices + CrmStaticURLUtil.supplierController + UserStaticURLUtil.supplierController_batchBan)
     public String batchBan( @RequestParam Map<String, String> params , @RequestHeader("userId") Integer currentUserId) throws Exception {
         try {
             ResponseJson responseJson = new ResponseJson();
