@@ -109,7 +109,7 @@ public class SupplierController  extends BaseController {
             supplierEntity = this.supplierService.getSupplier(supplierEntity);
             if(supplierEntity == null){
                 responseJson.setCode(ResponseCode.Code_Bussiness_Error);
-                responseJson.setMessage("该id没客户类型");
+                responseJson.setMessage("该id没供应商类型");
             }else{
                 responseJson.setCode(ResponseCode.Code_200);
                 responseJson.setData(supplierEntity);
