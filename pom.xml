@@ -11,7 +11,7 @@
 	<groupId>com.zsw</groupId>
 	<artifactId>crm_services</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>crm_services</name>
+	<name>crm-services</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -20,6 +20,7 @@
 	</properties>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -81,6 +82,7 @@
 			<version>2.8.5</version>
 		</dependency>
 
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -91,7 +93,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>3.6.10.Final</version>
+			<version>5.4.12.Final</version>
 		</dependency>
 
 		<!-- 添加Log4J依赖 -->
@@ -114,11 +116,45 @@
 			<version>3.12.0.GA</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper -->
+		<!--		<dependency>
+                    <groupId>com.github.pagehelper</groupId>
+                    <artifactId>pagehelper</artifactId>
+                    <version>5.1.10</version>
+                </dependency>-->
+
 		<dependency>
 			<groupId>com.zsw</groupId>
 			<artifactId>common</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
+
+
+		<dependency>
+			<groupId>com.zsw</groupId>
+			<artifactId>services-core</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.1.22</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.codehaus.janino/janino -->
+		<dependency>
+			<groupId>org.codehaus.janino</groupId>
+			<artifactId>janino</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+
 
 
 		<dependency>
@@ -173,7 +209,7 @@
 				<executions>
 					<execution>
 						<id>Generate MyBatis Artifacts</id>
-						<phase>package</phase>
+						<phase>deploy</phase>
 						<goals>
 							<goal>generate</goal>
 						</goals>
@@ -181,9 +217,9 @@
 				</executions>
 				<configuration>
 					<!--允许移动生成的文件 -->
-					<verbose>true</verbose>
+					<verbose>false</verbose>
 					<!-- 是否覆盖 -->
-					<overwrite>true</overwrite>
+					<overwrite>false</overwrite>
 					<!-- 自动生成的配置文件路径。启动插件时，插件会根据这里配置的路径去找到generatorConfig.xml配置文件，
                     根据配置文件里的配置，去自动生成Mapper接口（可以理解为Dao层）、实体类、Mapper.xml文件
                     -->
