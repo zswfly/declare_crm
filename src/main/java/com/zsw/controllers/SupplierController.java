@@ -146,6 +146,22 @@ public class SupplierController  extends BaseController {
                 paramMap.put("mnemonicCode", mnemonicCode);
             }
 
+            String contact = request.getParameter("contact");
+            if(contact !=null && StringUtils.isNotEmpty(contact)) {
+                paramMap.put("contact", contact);
+            }
+
+            String contactPhone = request.getParameter("contactPhone");
+            if(contactPhone !=null && StringUtils.isNotEmpty(contactPhone)) {
+                paramMap.put("contactPhone", contactPhone);
+            }
+
+            String contactAddress = request.getParameter("contactAddress");
+            if(contactAddress !=null && StringUtils.isNotEmpty(contactAddress)) {
+                paramMap.put("contactAddress", contactAddress);
+            }
+
+
             String beginCreateTime = request.getParameter("beginCreateTime");
             if(beginCreateTime !=null && StringUtils.isNotEmpty(beginCreateTime)) {
                 paramMap.put("beginCreateTime", beginCreateTime);

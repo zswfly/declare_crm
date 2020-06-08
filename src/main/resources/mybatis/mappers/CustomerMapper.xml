@@ -34,6 +34,17 @@
     <if test="paramMap.mnemonicCode != null and paramMap.mnemonicCode != ''">
       AND c.mnemonic_code LIKE '${paramMap.mnemonicCode}%'
     </if>
+
+    <if test="paramMap.contact != null and paramMap.contact != ''">
+      AND c.contact LIKE '%${paramMap.contact}%'
+    </if>
+    <if test="paramMap.contactPhone != null and paramMap.contactPhone != ''">
+      AND c.contact_phone LIKE '%${paramMap.contactPhone}%'
+    </if>
+    <if test="paramMap.contactAddress != null and paramMap.contactAddress != ''">
+      AND c.contact_address LIKE '%${paramMap.contactAddress}%'
+    </if>
+
     <if test="paramMap.status != null and paramMap.status >= 0">
       AND c.`status` = #{paramMap.status}
     </if>
@@ -63,6 +74,17 @@
     <if test="paramMap.mnemonicCode != null and paramMap.mnemonicCode != ''">
       AND c.mnemonic_code LIKE '${paramMap.mnemonicCode}%'
     </if>
+
+    <if test="paramMap.contact != null and paramMap.contact != ''">
+      AND c.contact LIKE '%${paramMap.contact}%'
+    </if>
+    <if test="paramMap.contactPhone != null and paramMap.contactPhone != ''">
+      AND c.contact_phone LIKE '%${paramMap.contactPhone}%'
+    </if>
+    <if test="paramMap.contactAddress != null and paramMap.contactAddress != ''">
+      AND c.contact_address LIKE '%${paramMap.contactAddress}%'
+    </if>
+
     <if test="paramMap.status != null and paramMap.status >= 0">
       AND c.`status` = #{paramMap.status}
     </if>
