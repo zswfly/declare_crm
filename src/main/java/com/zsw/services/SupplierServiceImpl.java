@@ -57,7 +57,7 @@ public class SupplierServiceImpl  implements ISupplierService,Serializable {
 
         SupplierEntity result = this.dbService.get(SupplierEntity.class,supplierEntity.getId());
 
-        if(result == null) throw new Exception("没有该集装箱id");
+        if(result == null) throw new Exception("没有该供应商id");
 
         BeanUtils.copyProperties(supplierEntity,result);
 
@@ -97,7 +97,7 @@ public class SupplierServiceImpl  implements ISupplierService,Serializable {
 
             param.setName(supplierEntity.getName());
             if( this.dbService.get(param) != null
-                    ) stringBuilder.append("集装箱名已存在");
+                    ) stringBuilder.append("供应商名已存在");
 
         }else{
             SupplierEntity param = new SupplierEntity();
@@ -107,7 +107,7 @@ public class SupplierServiceImpl  implements ISupplierService,Serializable {
             for(SupplierEntity result :resultList){
                 result = this.dbService.get(param);
                 if( result != null && result.getId() != supplierEntity.getId() ) {
-                    stringBuilder.append("集装箱名已存在");
+                    stringBuilder.append("供应商名已存在");
                     break;
                 }
             }

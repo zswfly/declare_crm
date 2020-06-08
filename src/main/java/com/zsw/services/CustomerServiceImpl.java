@@ -37,10 +37,10 @@ public class CustomerServiceImpl  implements ICustomerService,Serializable {
         customerEntity.setId(null);
         customerEntity.setMnemonicCode(PinyinUtils.getFirstSpell(customerEntity.getName()));
         customerEntity.setStatus(CommonStaticWord.Normal_Status_0);
-        customerEntity.setCreateUser(currentUserId);
-        customerEntity.setCreateTime(new Timestamp(new Date().getTime()));
         customerEntity.setUpdateUser(currentUserId);
         customerEntity.setUpdateTime(new Timestamp(new Date().getTime()));
+        customerEntity.setCreateUser(currentUserId);
+        customerEntity.setCreateTime(new Timestamp(new Date().getTime()));
         this.dbService.save(customerEntity);
     }
 
@@ -55,7 +55,7 @@ public class CustomerServiceImpl  implements ICustomerService,Serializable {
 
         CustomerEntity result = this.dbService.get(CustomerEntity.class,customerEntity.getId());
 
-        if(result == null) throw new Exception("没有该集装箱id");
+        if(result == null) throw new Exception("没有该客户id");
 
         BeanUtils.copyProperties(customerEntity,result);
 
@@ -95,7 +95,7 @@ public class CustomerServiceImpl  implements ICustomerService,Serializable {
 
             param.setName(customerEntity.getName());
             if( this.dbService.get(param) != null
-                    ) stringBuilder.append("集装箱名已存在");
+                    ) stringBuilder.append("客户名已存在");
 
         }else{
             CustomerEntity param = new CustomerEntity();
@@ -105,7 +105,7 @@ public class CustomerServiceImpl  implements ICustomerService,Serializable {
             for(CustomerEntity result :resultList){
                 result = this.dbService.get(param);
                 if( result != null && result.getId() != customerEntity.getId() ) {
-                    stringBuilder.append("集装箱名已存在");
+                    stringBuilder.append("客户名已存在");
                     break;
                 }
             }
