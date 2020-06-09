@@ -136,7 +136,7 @@ public class SupplierController  extends BaseController {
             if(status !=null && StringUtils.isNotEmpty(status)) {
                 paramMap.put("status", Integer.valueOf(NumberUtils.toInt(status, CommonStaticWord.Normal_Status_0)));
             }
-            String supplierName = request.getParameter("supplierName");
+            String supplierName = request.getParameter("name");
             if(supplierName !=null && StringUtils.isNotEmpty(supplierName)) {
                 paramMap.put("supplierName", supplierName);
             }

@@ -135,7 +135,7 @@ public class CustomerController extends BaseController {
             if(status !=null && StringUtils.isNotEmpty(status)) {
                 paramMap.put("status", Integer.valueOf(NumberUtils.toInt(status, CommonStaticWord.Normal_Status_0)));
             }
-            String customerName = request.getParameter("customerName");
+            String customerName = request.getParameter("name");
             if(customerName !=null && StringUtils.isNotEmpty(customerName)) {
                 paramMap.put("customerName", customerName);
             }

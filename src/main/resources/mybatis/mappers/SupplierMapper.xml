@@ -28,7 +28,7 @@
 
     SELECT s.*
     FROM supplier s
-
+    WHERE  1=1
     <if test="paramMap.supplierName != null and paramMap.supplierName != ''">
       AND s.`name` LIKE '%${paramMap.supplierName}%'
     </if>
@@ -69,6 +69,7 @@
     SELECT
     COUNT(DISTINCT s.id)
     FROM supplier s
+    WHERE  1=1
     <if test="paramMap.supplierName != null and paramMap.supplierName != ''">
       AND s.`name` LIKE '%${paramMap.supplierName}%'
     </if>
