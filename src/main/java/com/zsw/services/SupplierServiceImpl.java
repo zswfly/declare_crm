@@ -6,6 +6,7 @@ import com.zsw.utils.CommonStaticWord;
 import com.zsw.utils.PinyinUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,6 +21,7 @@ import java.util.Map;
 /**
  * Created by zhangshaowei on 2020/6/8.
  */
+@Service
 public class SupplierServiceImpl  implements ISupplierService,Serializable {
 
 
