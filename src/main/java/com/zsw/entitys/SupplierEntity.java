@@ -13,12 +13,12 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "supplier", schema = "crm")
 public class SupplierEntity extends IDEntity{
-    private int id;
+    private Integer id;
     private String name;
     private Timestamp createTime;
-    private int createUser;
+    private Integer createUser;
     private Timestamp updateTime;
-    private int updateUser;
+    private Integer updateUser;
     private Integer status;
     private String mnemonicCode;
     private String crmObjectTypeIds;
@@ -29,13 +29,13 @@ public class SupplierEntity extends IDEntity{
     private String contact;
     private String contactPhone;
     private String contactAddress;
-    private int isAudited;
+    private Integer isAudited;
     private Integer auditor;
     private Timestamp auditedAt;
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="id", length=11, nullable=false, unique=true, insertable=true, updatable=false)
+    @Column(name= "id", length=11, nullable= false, unique=true, insertable=true, updatable=false)
     public Integer getId() {
         return id;
     }
@@ -47,7 +47,7 @@ public class SupplierEntity extends IDEntity{
     //@Column(name = "name", nullable = false, length = 80)
     @NotNull
     @Length(max = 80)
-    @Column(name = "name", unique = true,  nullable = false, insertable = true, updatable = true, length = 80)
+    @Column(name = "name", unique = true,  nullable = false, insertable = true, updatable = true, length = 40)
     public String getName() {
         return name;
     }
@@ -58,7 +58,7 @@ public class SupplierEntity extends IDEntity{
 
     @Basic
     //@Column(name = "create_time", nullable = false)
-    @Column(name = "create_time", nullable = true, unique = false, insertable = true, updatable = false)
+    @Column(name = "create_time", nullable = false, unique = false, insertable = true, updatable = false)
     public Timestamp getCreateTime() {
         return createTime;
     }
@@ -71,7 +71,7 @@ public class SupplierEntity extends IDEntity{
     //@Column(name = "create_user", nullable = false)
 //    @NotNull
 //    @Min(1L)
-    @Column(name = "create_user", length = 11, nullable = true, unique = false, insertable = true, updatable = false)
+    @Column(name = "create_user", length = 11, nullable = false, unique = false, insertable = true, updatable = false)
     public Integer getCreateUser() {
         return createUser;
     }
@@ -82,7 +82,7 @@ public class SupplierEntity extends IDEntity{
 
     @Basic
     //@Column(name = "update_time", nullable = false)
-    @Column(name = "update_time", nullable = true, unique = false, insertable = true, updatable = true)
+    @Column(name = "update_time", nullable = false, unique = false, insertable = true, updatable = true)
     public Timestamp getUpdateTime() {
         return updateTime;
     }
@@ -93,7 +93,7 @@ public class SupplierEntity extends IDEntity{
 
     @Basic
     //@Column(name = "update_user", nullable = false)
-    @Column(name = "update_user", length = 11, nullable = true, unique = false, insertable = true, updatable = true)
+    @Column(name = "update_user", length = 11, nullable = false, unique = false, insertable = true, updatable = true)
     public Integer getUpdateUser() {
         return updateUser;
     }
@@ -117,7 +117,7 @@ public class SupplierEntity extends IDEntity{
 
     @Basic
     @Length(max = 255)
-    @Column(name = "mnemonic_code", unique = false,  nullable = true, insertable = true, updatable = true, length = 255)
+    @Column(name = "mnemonic_code", unique = false,  nullable = true, insertable = true, updatable = true, length = 100)
     public String getMnemonicCode() {
         return mnemonicCode;
     }
@@ -139,7 +139,7 @@ public class SupplierEntity extends IDEntity{
     }
 
     @Basic
-    @Column(name = "contract_scan_files", nullable = true, insertable = true, updatable = true, length = 100)
+    @Column(name = "contract_scan_files", nullable = true, insertable = true, updatable = true, length = 500)
     public String getContractScanFiles() {
         return contractScanFiles;
     }
@@ -159,7 +159,7 @@ public class SupplierEntity extends IDEntity{
     }
 
     @Basic
-    @Column(name = "contract_total_amount", nullable = true, insertable = true, updatable = true, precision = 2)
+    @Column(name = "contract_total_amount", nullable = true, insertable = true, updatable = true, precision = 0)
     public Integer getContractTotalAmount() {
         return contractTotalAmount;
     }
@@ -276,7 +276,7 @@ public class SupplierEntity extends IDEntity{
 
     @Override
     public int hashCode() {
-        int result = id;
+        Integer result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
         result = 31 * result + createUser;
